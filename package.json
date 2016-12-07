@@ -1,0 +1,33 @@
+{
+  "name": "fizzbuzz-online",
+  "version": "0.1.0",
+  "description": "Fizzbuzz as a service - yes, it has come to this.",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "mocha app/**/*--test.js",
+    "start": "node app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watsonarw/fizzbuzz-online.git"
+  },
+  "keywords": [
+    "fizzbuzz",
+    "fizz",
+    "buzz"
+  ],
+  "author": "Andrew Watson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watsonarw/fizzbuzz-online/issues"
+  },
+  "homepage": "https://github.com/watsonarw/fizzbuzz-online#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0"
+  }
+}
