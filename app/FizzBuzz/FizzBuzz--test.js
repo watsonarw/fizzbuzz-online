@@ -1,0 +1,69 @@
+var chai = require('chai');
+var FizzBuzz = require('./FizzBuzz');
+
+var { expect } = chai;
+
+var shared = {
+  isInput: function(input) {
+    it(`when given ${input}, returns ${input}`, function() {
+      expect(FizzBuzz(input)).to.eql(input);
+    });
+  },
+  isFizz: function(input) {
+    it(`when given ${input}, returns Fizz`, function() {
+      expect(FizzBuzz(input)).to.eql('Fizz');
+    });
+  },
+  isBuzz: function(input) {
+    it(`when given ${input}, returns Buzz`, function() {
+      expect(FizzBuzz(input)).to.eql('Buzz');
+    });
+  },
+  isFizzBuzz: function(input) {
+    it(`when given ${input}, returns FizzBuzz`, function() {
+      expect(FizzBuzz(input)).to.eql('FizzBuzz');
+    });
+  },
+  isError: function(input) {
+    it(`when given ${input}, throws error`, function() {
+      expect(function() { FizzBuzz(input) }).to.throw(Error, "Invalid input");
+    });
+  }
+};
+
+describe('FizzBuzz', function() {
+  shared.isError(0);
+  shared.isInput(1);
+  shared.isInput(2);
+  shared.isFizz(3);
+  shared.isInput(4);
+  shared.isBuzz(5);
+  shared.isFizz(6);
+  shared.isInput(7);
+  shared.isInput(8);
+  shared.isFizz(9);
+  shared.isBuzz(10);
+  shared.isInput(11);
+  shared.isFizz(12);
+  shared.isInput(13);
+  shared.isInput(14);
+  shared.isFizzBuzz(15);
+  shared.isInput(16);
+  shared.isInput(17);
+  shared.isFizz(18);
+  shared.isInput(19);
+  shared.isBuzz(20);
+  shared.isFizz(21);
+  shared.isInput(22);
+  shared.isInput(23);
+  shared.isFizz(24);
+  shared.isBuzz(25);
+  shared.isInput(26);
+  shared.isFizz(27);
+  shared.isInput(28);
+  shared.isInput(29);
+  shared.isFizzBuzz(30);
+  shared.isError('');
+  shared.isError(null);
+  shared.isError(undefined);
+});
