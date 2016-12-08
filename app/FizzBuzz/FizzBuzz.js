@@ -8,8 +8,6 @@ function FizzBuzz(input) {
     throw new InvalidNumber(input);
   }
 
-  if(number === 0) { return 0; }
-
   if(divisibleBy(15)) { return 'FizzBuzz'; }
 
   if(divisibleBy(3)) { return 'Fizz'; }

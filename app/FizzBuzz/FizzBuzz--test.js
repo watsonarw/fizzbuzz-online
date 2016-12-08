@@ -34,7 +34,7 @@ var shared = {
 };
 
 describe('FizzBuzz', () => {
-  shared.isInput(0);
+  shared.isFizzBuzz(0);
   shared.isInput(1);
   shared.isInput(2);
   shared.isFizz(3);

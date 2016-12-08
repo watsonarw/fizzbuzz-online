@@ -77,7 +77,7 @@ describe('API GET /number/:number', () => {
       chai.request(app)
         .get(path)
         .end((err, res) => {
-          expect(JSON.parse(res.text)).to.eql(0);
+          expect(JSON.parse(res.text)).to.eql("FizzBuzz");
           done();
         });
     });
