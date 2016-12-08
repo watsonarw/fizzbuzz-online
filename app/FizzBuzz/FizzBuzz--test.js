@@ -1,6 +1,8 @@
 var chai = require('chai');
 var FizzBuzz = require('./FizzBuzz');
 
+var InvalidNumber = require('../exceptions').InvalidNumber;
+
 var { expect } = chai;
 
 var shared = {
@@ -26,7 +28,7 @@ var shared = {
   },
   isError: (input) => {
     it(`when given ${input}, throws error`, () => {
-      expect(() => { FizzBuzz(input) }).to.throw(Error, "Invalid input");
+      expect(() => { FizzBuzz(input) }).to.throw(InvalidNumber, `Invalid number: ${input}`);
     });
   }
 };

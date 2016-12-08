@@ -77,7 +77,7 @@ describe('API GET /number/:number', () => {
       chai.request(app)
         .get(path)
         .end((err, res) => {
-          expect(JSON.parse(res.text)).to.eql({ error: 'Invalid input: 0' });
+          expect(JSON.parse(res.text)).to.eql({ error: 'Invalid number: 0' });
           done();
         });
     });
@@ -112,7 +112,7 @@ describe('API GET /number/:number', () => {
       chai.request(app)
         .get(path)
         .end((err, res) => {
-          expect(JSON.parse(res.text)).to.eql({ error: 'Invalid input: FizzBuzz' });
+          expect(JSON.parse(res.text)).to.eql({ error: `Invalid number: FizzBuzz` });
           done();
         });
     });

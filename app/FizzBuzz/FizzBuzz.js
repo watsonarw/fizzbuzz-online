@@ -1,11 +1,11 @@
-var InvalidInput = require('../exceptions').InvalidInput;
+var InvalidNumber = require('../exceptions').InvalidNumber;
 
 function FizzBuzz(input) {
 
   const number = parseInt(input);
 
   if(!number) {
-    throw new InvalidInput(input);
+    throw new InvalidNumber(input);
   }
 
   if(divisibleBy(15)) { return 'FizzBuzz'; }
