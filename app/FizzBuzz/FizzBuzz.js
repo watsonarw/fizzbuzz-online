@@ -1,18 +1,23 @@
+var InvalidInput = require('../exceptions').InvalidInput;
+
 function FizzBuzz(input) {
-    if(!input) {
-      throw new Error("Invalid input");
-    }
 
-    if(divisibleBy(15)) { return 'FizzBuzz'; }
+  const number = parseInt(input);
 
-    if(divisibleBy(3)) { return 'Fizz'; }
+  if(!number) {
+    throw new InvalidInput(input);
+  }
 
-    if(divisibleBy(5)) { return 'Buzz'; }
+  if(divisibleBy(15)) { return 'FizzBuzz'; }
 
-    return input;
+  if(divisibleBy(3)) { return 'Fizz'; }
+
+  if(divisibleBy(5)) { return 'Buzz'; }
+
+  return number;
 
   function divisibleBy(divisor) {
-    return input % divisor === 0
+    return number % divisor === 0
   }
 }
 

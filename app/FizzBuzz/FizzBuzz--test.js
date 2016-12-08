@@ -66,4 +66,5 @@ describe('FizzBuzz', () => {
   shared.isError('');
   shared.isError(null);
   shared.isError(undefined);
+  shared.isError('words');
 });
