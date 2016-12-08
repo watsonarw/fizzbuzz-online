@@ -4,34 +4,34 @@ var FizzBuzz = require('./FizzBuzz');
 var { expect } = chai;
 
 var shared = {
-  isInput: function(input) {
-    it(`when given ${input}, returns ${input}`, function() {
+  isInput: (input) => {
+    it(`when given ${input}, returns ${input}`, () => {
       expect(FizzBuzz(input)).to.eql(input);
     });
   },
-  isFizz: function(input) {
-    it(`when given ${input}, returns Fizz`, function() {
+  isFizz: (input) => {
+    it(`when given ${input}, returns Fizz`, () => {
       expect(FizzBuzz(input)).to.eql('Fizz');
     });
   },
-  isBuzz: function(input) {
-    it(`when given ${input}, returns Buzz`, function() {
+  isBuzz: (input) => {
+    it(`when given ${input}, returns Buzz`, () => {
       expect(FizzBuzz(input)).to.eql('Buzz');
     });
   },
-  isFizzBuzz: function(input) {
-    it(`when given ${input}, returns FizzBuzz`, function() {
+  isFizzBuzz: (input) => {
+    it(`when given ${input}, returns FizzBuzz`, () => {
       expect(FizzBuzz(input)).to.eql('FizzBuzz');
     });
   },
-  isError: function(input) {
-    it(`when given ${input}, throws error`, function() {
-      expect(function() { FizzBuzz(input) }).to.throw(Error, "Invalid input");
+  isError: (input) => {
+    it(`when given ${input}, throws error`, () => {
+      expect(() => { FizzBuzz(input) }).to.throw(Error, "Invalid input");
     });
   }
 };
 
-describe('FizzBuzz', function() {
+describe('FizzBuzz', () => {
   shared.isError(0);
   shared.isInput(1);
   shared.isInput(2);
