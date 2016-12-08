@@ -4,9 +4,11 @@ function FizzBuzz(input) {
 
   const number = parseInt(input);
 
-  if(!number) {
+  if(isNaN(number)) {
     throw new InvalidNumber(input);
   }
+
+  if(number === 0) { return 0; }
 
   if(divisibleBy(15)) { return 'FizzBuzz'; }
 

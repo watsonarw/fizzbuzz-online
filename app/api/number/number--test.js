@@ -55,29 +55,29 @@ describe('API GET /number/:number', () => {
       path = '/0';
     });
 
-    it('has status 400', (done) => {
+    it('has status 200', (done) => {
       chai.request(app)
         .get(path)
         .end((err, res) => {
-          expect(res).to.have.status(400);
+          expect(res).to.have.status(200);
           done();
         });
     });
 
-    it('has errors', (done) => {
+    it('has no errors', (done) => {
       chai.request(app)
         .get(path)
         .end((err, res) => {
-          expect(err).not.to.be.null;
+          expect(err).to.be.null;
           done();
         });
     });
 
-    it('shows the error message', (done) => {
+    it('returns 0', (done) => {
       chai.request(app)
         .get(path)
         .end((err, res) => {
-          expect(JSON.parse(res.text)).to.eql({ error: 'Invalid number: 0' });
+          expect(JSON.parse(res.text)).to.eql(0);
           done();
         });
     });
