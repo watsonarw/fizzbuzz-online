@@ -7,7 +7,7 @@ var app = require('./index');
 
 chai.use(chaiHttp);
 
-describe('/', () => {
+describe('API GET /', () => {
 
   const path = '/'
 
