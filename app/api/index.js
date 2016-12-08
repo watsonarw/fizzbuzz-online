@@ -8,4 +8,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.use((err, req, res, then) => {
+  if (err) {
+    res.status(500);
+    res.json({ error: "Internal Error" });
+  }
+});
+
 module.exports = app;
