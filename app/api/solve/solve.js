@@ -4,6 +4,14 @@ const solve = express();
 const SolveFizzBuzz = require('../../SolveFizzBuzz/SolveFizzBuzz');
 const InvalidNumber = require('../../exceptions').InvalidNumber;
 
+solve.get('/from/:first/to/:last', (req, res) => {
+  const first = req.params.first,
+    last = req.params.last;
+
+  res.status(200);
+  res.json(SolveFizzBuzz(first, last));
+});
+
 solve.get('/', (req, res) => {
   res.status(200);
   res.json(SolveFizzBuzz(1, 100));
