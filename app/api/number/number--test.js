@@ -99,11 +99,11 @@ describe('API GET /number/:number', () => {
         });
     });
 
-    it('has errors', (done) => {
+    it('has a client error', (done) => {
       chai.request(app)
         .get(path)
         .end((err, res) => {
-          expect(err).not.to.be.null;
+          expect(res.clientError).to.be.true;
           done();
         });
     });

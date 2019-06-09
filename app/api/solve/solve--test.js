@@ -71,11 +71,11 @@ describe('API GET /solve/', () => {
           });
       });
 
-      it('has errors', (done) => {
+      it('has a clientError', (done) => {
         chai.request(app)
           .get(path)
           .end((err, res) => {
-            expect(err).not.to.be.null;
+            expect(res.clientError).to.be.true;
             done();
           });
       });
